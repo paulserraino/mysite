@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+/*------Setup--------*/
+body {
+	font-size: 18px;
+	font-family: 'Oswald', sans-serif;
+}
+
+ul,ol { list-style: none;}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*---------Navbar---------*/
+nav {
+	background-color: #333;
+	margin: 0;
+	padding: 30px;
+}
+
+.navbar a { 
+	color: #fff; 
+	text-decoration: none
+}
+.navbar a:hover { color: lightblue; }
+
+.navbar li {
+	display: inline-block;
+}
+
+.dropdown {
+	position: absolute;
+	background-color: #333;
+}
+
+.dropdown li {
+	display: block;
+}
