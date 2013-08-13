@@ -8,33 +8,141 @@ body {
 
 ul,ol { list-style: none;}
 
+section, header, footer {
+	border-bottom: 1px solid #333;
+	height: 300px;
+	margin: 0;
+}
+
+h1,h2,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	height: 300px;
+}
+
 .container {
 	width: 960px;
 	margin: 0 auto;
 }
 
-/*---------Navbar---------*/
-nav {
-	background-color: #333;
-	margin: 0;
-	padding: 30px;
+/*---------Header---------*/
+.me {
+	background-color: lightblue;
+	color: #333;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	float: left;
+	box-shadow: lightblue 0 0 15px;
+
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.7s;
 }
 
-.navbar a { 
-	color: #fff; 
-	text-decoration: none
+.me:hover {
+	background-color: royalblue;
+	height: 280px;
+	margin-top: 10px;
 }
-.navbar a:hover { color: lightblue; }
+
+.title {
+	position: relative;
+	word-wrap: break-word;
+	text-align: center;
+	top: 70px;
+
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.7s;
+}
+
+.title h1 {
+	letter-spacing: 2px;
+}
+
+.title:hover {
+	-webkit-transform: rotate(20deg);
+	-moz-transform: rotate(20deg);
+	transform: rotate(20deg);	
+}
+
+.title p {
+	border-top: 1px dotted #333;
+	border-bottom: 1px dotted #333;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.nav {
+	position: fixed;
+	right: 100px;
+	font-size: 20px;
+}
 
 .navbar li {
 	display: inline-block;
+	margin-right: 10px;
 }
 
-.dropdown {
-	position: absolute;
+.navbar a {
+	text-decoration: none;
+	color: #333;
+	border-top: 2px solid lightcyan;
+	
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.navbar a:hover {
+	border-top: none;
+	border-left: 2px solid lightcyan;
+	color: #888;
+}
+
+/*-------Student---------*/
+#student-section {
+}
+#student {
+	text-align: center;
+	font-size: 30px;
+}	
+
+/* box effect */
+
+
+/*-------Footer-----*/
+.footer {
 	background-color: #333;
+	height: 150px;
 }
 
-.dropdown li {
-	display: block;
+.social {
+	margin: 0 auto;
+	width: 300px;
+	border-left: 1px dotted #fff;
+	border-right: 1px dotted #fff;
+}
+
+.social a {
+	text-decoration: none;
+	color: #FFF;
+	font-size: 100px;
+}
+
+.social a:hover {
+	color: lightblue;
+}
+
+.social li {
+	display: inline-block;
+}
+
+/*--------Mobile ------*/
+@media (max-width: 800px) {
+
 }
