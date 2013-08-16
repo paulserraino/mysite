@@ -1,0 +1,136 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Port+Lligat+Slab);
+@import url(http://fonts.googleapis.com/css?family=Fauna+One);
+/*
+*	Setup
+*/
+body {
+	font-size: 18px;
+	font-family: 'Fauna One', serif;
+	background-color: #e5e5e5; 
+}
+
+ul,ol { list-style: none;}
+
+h1,h2,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#container {
+	width: 900px;
+	height: 500px;
+	background-color: #ccc;
+	margin: 0 auto;
+}
+
+.center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+/*
+*	Header
+*/
+
+.nav {
+	font-size: 20px;
+}
+
+.navbar li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #000;
+	border-top: 2px solid lightcyan;
+	
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.navbar a:hover {
+	border-top: none;
+	border-left: 2px solid lightcyan;
+	color: #333;
+}
+
+/*
+*	Me
+*/
+.me {
+	height: 50%;
+	width: 50%;
+}
+
+
+.title {
+	position: relative;
+	word-wrap: break-word;
+	text-align: center;
+
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.7s;
+}
+
+.title h1 {
+	letter-spacing: 2px;
+}
+
+.title:hover {
+}
+
+.title p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+/*
+*	Footer
+*/
+.footer {
+	background-color: #333;
+	height: 150px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.social {
+	margin: 0 auto;
+	width: 300px;
+	border-left: 1px dotted #fff;
+	border-right: 1px dotted #fff;
+}
+
+.social a {
+	text-decoration: none;
+	color: #FFF;
+	font-size: 100px;
+}
+
+.social a:hover {
+	color: lightblue;
+}
+
+.social li {
+	display: inline-block;
+}
+
+/*--------Mobile ------*/
+@media (max-width: 800px) {
+
+}
