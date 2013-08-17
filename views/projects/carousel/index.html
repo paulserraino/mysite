@@ -5,6 +5,13 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/main.css">
 	<style type="text/css">
+		.preload * {
+		  -webkit-transition: none !important;
+		  -moz-transition: none !important;
+		  -ms-transition: none !important;
+		  -o-transition: none !important;
+		}
+
 		.img-rotator {
 			height: 470px;
 			width: 700px;
@@ -60,57 +67,50 @@
 	</style>
 	<title>Carousel</title>
 </head>
-<body>
+<body class="preload">
 	<header>
 		<div class="container">
 	
 			<nav class="nav">
 				<ol class="navbar">
-					<li><a href="/">Home</a></li>
-					<li><a href="/blog">Blog</a></li>
-					<li><a href="/projects">Projects</a></li>
+					<li><a href="/projects">Back</a></li>
 				</ol>
 			</nav>
 		</div>
 	</header>
 	<div id="container">
 
-	<% pics.forEach(function (pic, index){ %>
-	<% }) %>
-    <div class="carousel">
+	<div class="carousel">
 		<ul class="img-rotator">
-			<li class="img" id="img-1">
-				<img src="http://farm9.staticflickr.com/8245/8663277953_a575e8ce2a_c.jpg">
+			<% pics.forEach(function (pic, index){ %>
+			<li class="img">
+				<img src="<%= pic.src %>" alt="">	
 				<div id="picinfo">
 					<p>picture by some guy blah blah</p>
 				</div>
 			</li>
-			<li class="img" id="img-2">
-				<img src="http://farm9.staticflickr.com/8244/8663158118_58bc73702f_c.jpg">
-				<div id="picinfo">
-					<p>picture by some guy blah blah</p>
-				</div>
-			</li>
-			<li class="img" id="img-3">
-				<img src="http://farm9.staticflickr.com/8264/8663054393_36493c750e_c.jpg">
-				<div id="picinfo">
-					<p>picture by some guy blah blah</p>
-				</div>
-			</li>
+			<% }) %>
 		</ul>
 		<nav>
 			<ol>
-				<li class="navdot"></li>
-				<li class="navdot"></li>
-				<li class="navdot"></li>
+				<% pics.forEach(function (pic){ %>
+					<li class="navdot"></li>
+				<% }) %>
 			</ol>
 		</nav>
 	</div>
+
+	<p id="rights">I am no artist. All rights rights reserved to the taleted people who created the beautiful works of art used on this page.</p>
 
 </div>
 	<script src="../js/jquery.js"></script>
 	<script>
 	(function ($) {
+
+		$(window).load(function() {
+		  $("body").removeClass("preload");
+		});
+
 		$(document).ready(function(){
 			var $imgs = $('.img'),
 				$navdot = $('.navdot');
@@ -132,6 +132,21 @@
 				$navdot.eq(index).css('background-color', '#fff');
 
 			});
+
+			(function animate() {
+				setTimeout(animate, 2000);
+				var active = $('.img-active').index()
+				$imgs.removeClass('img-active')
+				$navdot.css('background-color', 'palevioletred');
+
+				$imgs
+					.eq(active)
+					.addClass('img-active');
+				$navdot
+					.eq(active)
+					.css('background-color', '#fff');
+
+			})()	
 
 
 			

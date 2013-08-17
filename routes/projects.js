@@ -16,3 +16,10 @@ console.log(picData)
 exports.carousel = function (req, res){
 	 res.render('projects/carousel/index.html', {pics: picData});
 }
+
+/*
+*	GET spin nav project
+*/
+exports.spin = function (req, res) {
+	res.render('projects/spin_nav/index.html');
+}

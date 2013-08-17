@@ -1,19 +1,69 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<style>
+	ol, ul {
+		list-style: none;
+		margin: 0;
+	}
+	.col {
+		float: left;
+	}
+
+	.span-1-2 { width: 29%; }
+	.span-2-2 { width: 70%;}
+
+	.container {
+		position: relative;
+		width: 960px;
+		margin: 0 auto;
+	}
+
+	#dock {
+		border-right: 2px solid #000;
+		height: 500px;
+	}
+	#dock a {
+		text-decoration: none;
+		color: #000;
+		font-size: 50px;
+
+	}
+
+	/* note last is first */
+	.page {
+		background: palegreen;
+		width: 100%;
+		position: absolute;
+
+		-webkit-transition: all 1s;
+		-moz-transition: all 1s;
+		-ms-transition: all 1s;
+		-o-transition: all 1s;
+		transition: all 1s;
+	}
+
+	.page-out {
+
+	}
+
+	.page-in {
+
+	}
+	</style>
 	<meta charset="UTF-8">
 	<title>spin nav</title>
 </head>
 <body>
 
-	<nav>
+	<nav id="back">
 		<ol>
 			<li><a href="/projects">back</a></li>
 		</ol>
 	</nav>
 
 	<div class="container">
-		<div id="dock" class="col-1/2">
+		<div id="dock" class="col span-1-2">
 			<nav>
 				<ol>
 					<li><a href="#">link</a></li>
@@ -22,18 +72,18 @@
 				</ol>
 			</nav>	
 		</div>
-		<div id="pages" class="col-1/2">
+		<div id="pages" class="col span-2-2">
 			<ol>
 					<li class="page">
-						<h2>Cool</h2>
+						<h2>Third</h2>
 						<p>lorum ipsum</p>
 					</li>
 					<li class="page">
-						<h2>Awesome</h2>	
+						<h2>Second</h2>	
 						<p>lorum ipsum</p>
 					</li>
 					<li class="page">
-						<h2>Best</h2>					
+						<h2>First</h2>					
 						<p>lorum ipsum</p>
 					</li>
 				</ol>	
