@@ -34,27 +34,30 @@
 	.page {
 		background: palegreen;
 		width: 100%;
-		position: absolute;
 
-		-webkit-transition: all 1s;
-		-moz-transition: all 1s;
-		-ms-transition: all 1s;
-		-o-transition: all 1s;
-		transition: all 1s;
+		-webkit-transition: all 0.6s;
+		-moz-transition: all 0.6s;
+		-ms-transition: all 0.6s;
+		-o-transition: all 0.6s;
+		transition: all 0.6s;
 	}
 
 	.page-out {
-
+	 -webkit-transform: rotate(90deg) translate(0px,-400px);
 	}
 
 	.page-in {
+	-webkit-transform: rotate(0deg) translate(0px,0px);
+	}
 
+	.page-inactive {
+		-webkit-transform: rotate(-90deg) translate(0px,500px);
 	}
 	</style>
 	<meta charset="UTF-8">
 	<title>spin nav</title>
 </head>
-<body>
+<body class="preload">
 
 	<nav id="back">
 		<ol>
@@ -66,9 +69,9 @@
 		<div id="dock" class="col span-1-2">
 			<nav>
 				<ol>
-					<li><a href="#">link</a></li>
-					<li><a href="#">link</a></li>
-					<li><a href="#">link</a></li>
+					<li><a href="#">Page1</a></li>
+					<li><a href="#">Page2</a></li>
+					<li><a href="#">Page3</a></li>
 				</ol>
 			</nav>	
 		</div>
@@ -89,5 +92,35 @@
 				</ol>	
 		</div>
 	</div>
+	<script>
+	var pages = document.querySelectorAll('.page')
+	var dock = document.querySelectorAll('#dock a');
+	var pageIn = false;
+
+	window.onload = function (event){
+		for (var p=0; p<pages.length; p++) {
+			pages[p].classList.add('page-inactive')
+		}
+	}
+
+	for (var d=0; d <dock.length; d++) {
+		dock[d].addEventListener('click', dockHandler, false);
+	}
+
+	function dockHandler (evt){
+		evt.preventDefault();
+		var index = getIndex(this.parentNode)
+		pages[index].classList.remove('page-inactive')
+		pages[index].classList.add('page-in')
+	}
+
+	function getIndex(elm) {
+	    var nodes = elm.parentNode.childNodes, node;
+	    var i = index = 0;
+	    while( (node=nodes.item(i++)) && node!=elm )
+	        if( node.nodeType==1 ) index++;
+	    return index
+	}
+	</script>
 </body>
 </html>

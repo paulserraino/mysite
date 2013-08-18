@@ -11,8 +11,6 @@ exports.index = function (req, res){
 */
 var picData = require('../views/projects/carousel/picData.json')
 
-console.log(picData)
-
 exports.carousel = function (req, res){
 	 res.render('projects/carousel/index.html', {pics: picData});
 }
