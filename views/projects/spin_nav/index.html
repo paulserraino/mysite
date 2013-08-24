@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<style>
+	@import url(http://fonts.googleapis.com/css?family=Ledger);
+	body {
+		font-family: 'Ledger', serif;
+	}
 	ol, ul {
 		list-style: none;
 		margin: 0;
@@ -23,6 +27,10 @@
 		border-right: 2px solid #000;
 		height: 500px;
 	}
+
+	#dock nav {
+		position: fixed;
+	}
 	#dock a {
 		text-decoration: none;
 		color: #000;
@@ -32,8 +40,9 @@
 
 	/* note last is first */
 	.page {
+		position: absolute;
 		background: palegreen;
-		width: 100%;
+	 	visibility: visible;
 
 		-webkit-transition: all 0.6s;
 		-moz-transition: all 0.6s;
@@ -44,16 +53,32 @@
 
 	.page-out {
 	 -webkit-transform: rotate(90deg) translate(0px,-400px);
-	}
-
-	.page-in {
-	-webkit-transform: rotate(0deg) translate(0px,0px);
+	 visibility: hidden;
+	 opacity: 0;
 	}
 
 	.page-inactive {
 		-webkit-transform: rotate(-90deg) translate(0px,500px);
+	 visibility: hidden;
+	 opacity: 0;
+	}
+
+	@media (max-width: 830px){
+		#dock {
+			border-right: none;
+			height: 226px;
+		}
+		#dock nav {
+			position: relative;
+		}
+		.col {
+			clear: both;
+		}
+		.span-1-2 { width: 0%; }
+		.span-2-2 { width: 0%;}
 	}
 	</style>
+	<link rel="stylesheet" href="/spin-nav.css">
 	<meta charset="UTF-8">
 	<title>spin nav</title>
 </head>
@@ -78,49 +103,63 @@
 		<div id="pages" class="col span-2-2">
 			<ol>
 					<li class="page">
-						<h2>Third</h2>
-						<p>lorum ipsum</p>
+						<h2>First</h2>	
+						<p>As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect. He was lying on his hard, as it were armor-plated, back and when he lifted his head a little he could see his dome-like brown belly divided into stiff arched segments on top of which the bed quilt could hardly keep in position and was about to slide off completely. His numerous legs, which were pitifully thin compared to the rest of his bulk, waved helplessly before his eyes.
+
+What has happened to me? he thought. It was no dream. His room, a regular human bedroom, only rather too small, lay quiet between the four familiar walls. Above the table on which a collection of cloth samples was unpacked and spread out-Samsa was a commercial traveler-hung the picture which he had recently cut out of an illustrated magazine and put into a pretty gilt frame. It showed a lady, with a fur cap on and a fur stole, sitting upright and holding out to the spectator a huge fur muff into which the whole of her forearm had vanished! Gregor's eyes turned next to the window, and the overcast sky-one could hear rain drops beating on the window gutter-made him quite melancholy. What about sleeping a little longer and forgetting all this nonsense, he thought, but it could not be done, for he was accustomed to sleep on his right side and in his present condition he could not turn himself over. However violently he forced himself towards his right side he always rolled on to his back again. He tried it at least a hundred times, shutting his eyes to keep from seeing his struggling legs, and only desisted when he began to feel in his side a faint dull ache he had never experienced before.</p>
 					</li>
 					<li class="page">
 						<h2>Second</h2>	
-						<p>lorum ipsum</p>
+						<p>Oh God, he thought, what an exhausting job I've picked on! Traveling about day in, day out. It's much more irritating work than doing the actual business in the office, and on top of that there's the trouble of constant traveling, of worrying about train connections, the bed and irregular meals, casual acquaintances that are always new and never become intimate friends. The devil take it all! He felt a slight itching up on his belly; slowly pushed himself on his back nearer to the top of the bed so that he could lift his head more easily; identified the itching place which was surrounded by many small white spots the nature of which he could not understand and made to touch it with a leg, but drew the leg back immediately, for the contact made a cold shiver run through him.
+
+He slid down again into his former position. This getting up early, he thought, makes one quite stupid. A man needs his sleep. Other commercials live like harem women. For instance, when I come back to the hotel of a morning to write up the orders I've got, these others are only sitting down to breakfast. Let me just try that with my chief; I'd be sacked on the spot. Anyhow, that might be quite a good thing for me, who can tell? If I didn't have to hold my hand because of my parents I'd have given notice long ago, I'd have gone to the chief and told him exactly what I think of him. That would knock him endways from his desk! It's a queer way of doing, too, this sitting on high at a desk and talking down to employees, especially when they have to come quite near because the chief is hard of hearing. Well, there's still hope; once I've saved enough money to pay back my parents' debts to him-that should take another five or six years-I'll do it without fail. I'll cut myself completely loose then. For the moment, though, I'd better get up, since my train goes at five.</p>
 					</li>
 					<li class="page">
-						<h2>First</h2>					
-						<p>lorum ipsum</p>
+						<h2>Third</h2>
+						<p>He looked at the alarm clock ticking on the chest. Heavenly Father! he thought. It was half-past six o'clock and the hands were quietly moving on, it was even past the half-hour, it was getting on toward a quarter to seven. Had the alarm clock not gone off? From the bed one could see that it had been properly set for four o'clock; of course it must have gone off. Yes, but was it possible to sleep quietly through that ear-splitting noise? well he had not slept quietly, yet apparently all the more soundly for that. But what was he to do now? The next train went at seven o'clock; to catch that he would need to hurry like mad and his samples weren't even packed up, and he himself wasn't feeling particularly fresh and active. And even if he did catch the train he wouldn't avoid a row with the chief, since the firm's porter would have been waiting for the five o'clock train and would have long since reported his failure to turn up. The porter was a creature of the chief's, spineless and stupid. Well, supposing he were to say he was sick? But that would be most unpleasant and would look suspicious, since during his five years' employment he had not been ill once. The chief himself would be sure to come with the sick-insurance doctor, would reproach his parents with their son's laziness and would cut all excuses short by referring to the insurance doctor, who of course regarded all mankind as perfectly healthy malingerers. And would he be so far wrong on this occasion? Gregor really felt quite welt apart from a drowsiness that was utterly superfluous after such a long sleep, and he was even unusually hungry.
+
+As all this was running through his mind at top speed without his being able to decide to leave his bed-the alarm clock had just struck a quarter to seven-there came a cautious tap at the door behind the head of his bed. "Gregor," said a voice-it was his mother's-"it's a quarter to seven. Hadn't you a train to catch?" That gentle voice! Gregor had a shock as he heard his own voice answering hers, unmistakably his own voice, it was true, but with a persistent horrible twittering squeak behind it like an undertone, that left the words in their clear shape only for the first moment and then rose up reverberating round them to destroy their sense, so that one could not be sure one had heard them rightly. Gregor wanted to answer at length and explain everything, but in the circumstances he confined himself to saying: "Yes, yes, thank you, Mother, I'm getting up now." The wooden door between them must have kept the change in his voice from being noticeable outside, for his mother contented herself with this statement and shuffled away. Yet this brief exchange of words had made the other members of the family aware that Gregor was still in the house, as they had not expected, and at one of the side doors his father was already knocking, gently, yet with his fist. "Gregor, Gregor," he called, "what's the matter with you?" And after a little while he called again in a deeper voice: "Gregor! Gregor!" At the other side door his sister was saying in a low, plaintive tone: "Gregor? Aren't you well? Are you needing anything?" He answered them both at once: "I'm just ready," and did his best to make his voice sound as normal as possible by enunciating the words very clearly and leaving long pauses between them. So his father went back to his breakfast, but his sister whispered: "Gregor, open the door, do." However, he was not thinking of opening the door, and felt thankful for the prudent habit he had acquired in traveling of locking all doors during the night, even at home.</p>
 					</li>
 				</ol>	
 		</div>
 	</div>
+	<script src="../js/jquery.js"></script>
 	<script>
-	var pages = document.querySelectorAll('.page')
-	var dock = document.querySelectorAll('#dock a');
-	var pageIn = false;
+	$(window).load(function() {
+		  $("body").removeClass("preload");
+		});
 
-	window.onload = function (event){
-		for (var p=0; p<pages.length; p++) {
-			pages[p].classList.add('page-inactive')
+	var $page = $('.page'),
+		$dock = $('#dock a'),
+
+	transEvents = ['transitionend', 'webkitTransitionEnd', 'mozTransitionEnd', 'msTransitionEnd', 'oTransitionEnd'];	
+
+
+	$page.addClass('page-inactive')
+	$page.eq(0).removeClass('page-inactive')
+
+	$dock.on('click', function (){
+		$page.addClass('page-out')
+		var index = $(this).parent().index();
+
+		$page.eq(index).removeClass('page-inactive')
+		$page.eq(index).removeClass('page-out')
+	})
+
+	for(var ts=0; ts<transEvents.length; ts++) {
+		$page.on(transEvents[ts], transHandler)
+	}
+
+	function transHandler (evt){
+		var $self = $(this),
+		 	index = $self.index();
+		if ($self.hasClass('page-out') ) {
+			$self
+				.removeClass('page-out')
+				.addClass('page-inactive')
 		}
 	}
 
-	for (var d=0; d <dock.length; d++) {
-		dock[d].addEventListener('click', dockHandler, false);
-	}
-
-	function dockHandler (evt){
-		evt.preventDefault();
-		var index = getIndex(this.parentNode)
-		pages[index].classList.remove('page-inactive')
-		pages[index].classList.add('page-in')
-	}
-
-	function getIndex(elm) {
-	    var nodes = elm.parentNode.childNodes, node;
-	    var i = index = 0;
-	    while( (node=nodes.item(i++)) && node!=elm )
-	        if( node.nodeType==1 ) index++;
-	    return index
-	}
 	</script>
 </body>
 </html>

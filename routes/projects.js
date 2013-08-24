@@ -21,3 +21,10 @@ exports.carousel = function (req, res){
 exports.spin = function (req, res) {
 	res.render('projects/spin_nav/index.html');
 }
+
+/*
+*	GET sign up modal
+*/
+exports.signup = function (req, res){
+	res.render('projects/signup_modal/index.html')
+}

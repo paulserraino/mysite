@@ -33,6 +33,7 @@ app.get('/', routes.index);
 app.get('/projects', projects.index);
 app.get('/projects/carousel', projects.carousel);
 app.get('/projects/spin', projects.spin);
+app.get('/projects/signupmodal', projects.signup);
 app.get('/blog', blog.index);
 
 http.createServer(app).listen(app.get('port'), function(){
